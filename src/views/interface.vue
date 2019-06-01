@@ -35,11 +35,9 @@ export default {
   methods: {
         fetchData() {
             console.log("Inside fetchData() !!!!");
-            d3.json("../barchart.json", function(error, data) {
+            d3.json("/barchart.json").then(data => {
                 console.log("\nInside d3.json()!!!!\n");
-                if (error){
-                    throw error;  
-                }                        
+                console.log(data);                
                 this.barchart_data = data;
                 // debug
                 console.log("this.barchart_data: ", this.barchart_data);
