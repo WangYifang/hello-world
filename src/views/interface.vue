@@ -24,27 +24,39 @@ export default {
     BarChart
   },
   data(){
+        // this.test_data = "bbbbbbbb"
         return {
             loadData: [],
-            barchart_data: []
+            barchart_data: [],
+            test_: "lalalalalalal"
         };
   },
   mounted() {
         this.fetchData();
+        // this.test();
   },
   methods: {
+      test: function () {
+        // console.log("===>barchart_data: ", this.barchart_data);
+        // console.log("===>this.test_: ", this.test_);
+        // console.log("===>this.test_data: ", this.test_data);
+      },
         fetchData() {
             console.log("Inside fetchData() !!!!");
-            d3.json("../barchart.json", function(error, data) {
+            console.log("===>barchart_data: ", this.barchart_data);
+            console.log("===>this.test_: ", this.test_);
+
+            // d3.json('../barchart.json').then(data => {
+            d3.json('barchart.json').then(data => {
                 console.log("\nInside d3.json()!!!!\n");
-                if (error){
-                    throw error;  
-                }                        
+                console.log("this: ", this);
+                console.log("\nthis.barchart_data: ", this.barchart_data);
+                console.log("\ndata: ", data);                   
                 this.barchart_data = data;
                 // debug
-                console.log("this.barchart_data: ", this.barchart_data);
+                console.log("\n-->this.barchart_data: ", this.barchart_data);
             });
         }
-    }
+  }
 }
 </script>

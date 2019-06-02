@@ -96,7 +96,7 @@ export default {
                     .style("display", "inline-block")
                     .html((d.area) + "<br>" + "£" + (d.value));
                 })
-                .on("mouseout", function(d){ 
+                .on("mouseout", function(){ 
                     tooltip.style("display", "none");
                 });          
             }
